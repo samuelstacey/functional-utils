@@ -1,4 +1,4 @@
-package com.utils.functionalutils;
+package com.functionaltools.functionalutils;
 
 import java.util.function.Function;
 import java.util.stream.Stream;
