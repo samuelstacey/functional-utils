@@ -27,6 +27,11 @@ public final class Identity<T> {
         return of(mapper.apply(value));
     }
 
+    public <U> U in(Function<? super T, ? extends U> mapper) {
+        notNull(mapper, "mapper must not be null");
+        return mapper.apply(value);
+    }
+
 //    public Identity<T> filter(Predicate<? super T> predicate) {
 //        notNull(predicate, "predicate must not be null");
 //        return predicate.test(value) ? this : empty();
