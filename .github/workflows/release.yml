@@ -9,7 +9,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - run: chmod=+x /home/runner/work/_temp/aaefb4c4-d8a7-49fa-8fa2-672cfd683295.sh
       - uses: actions/checkout@v3
       - name: Set up Java
         uses: actions/setup-java@v3
@@ -24,4 +23,6 @@ jobs:
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
           JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.JRELEASER_GPG_PUBLIC_KEY }}
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
+        run: |
+          chmod=+x /home/runner/work/_temp/aaefb4c4-d8a7-49fa-8fa2-672cfd683295.sh
+          ./mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
