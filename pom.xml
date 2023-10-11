@@ -100,4 +100,17 @@
 		</profile>
 	</profiles>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:samuelstacey/functional-utils.git</connection>
+		<developerConnection>scm:git:ssh://github.com:samuelstacey/functional-utils.git</developerConnection>
+		<url>https://github.com/samuelstacey/functional-utils/tree/main</url>
+	</scm>
+
 </project>
