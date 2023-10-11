@@ -1,0 +1,1 @@
+./mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
