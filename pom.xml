@@ -11,7 +11,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.release>11</maven.compiler.release>
-		<baseNexusURL>${baseNexusURL}</baseNexusURL>
+		<baseNexusURL>https://s01.oss.sonatype.org/content/repositories/releases</baseNexusURL>
 		<targetRepositoryID>${groupId}</targetRepositoryID>
 		<package.final.name>${artifactId}</package.final.name>
 	</properties>
