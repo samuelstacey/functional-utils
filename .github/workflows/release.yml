@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - run: --chmod=+x /home/runner/work/_temp/aaefb4c4-d8a7-49fa-8fa2-672cfd683295.sh
+      - run: chmod=+x /home/runner/work/_temp/aaefb4c4-d8a7-49fa-8fa2-672cfd683295.sh
       - uses: actions/checkout@v3
       - name: Set up Java
         uses: actions/setup-java@v3
