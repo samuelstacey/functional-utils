@@ -3,18 +3,18 @@ package com.functionaltools.functionalutils;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import static org.apache.commons.lang3.Validate.notNull;
+import static java.util.Objects.requireNonNull;
 
 public final class Identity<T> {
 
     private final T value;
 
     private Identity(T value) {
-        this.value = notNull(value, "Identity value must not be null");
+        this.value = requireNonNull(value, "Identity value must not be null");
     }
 
     public static <T> Identity<T> of(T value) {
-        notNull(value, "Identity value must not be null");
+        requireNonNull(value, "Identity value must not be null");
         return new Identity<>(value);
     }
 
@@ -23,17 +23,17 @@ public final class Identity<T> {
     }
 
     public <U> Identity<U> map(Function<? super T, ? extends U> mapper) {
-        notNull(mapper, "mapper must not be null");
+        requireNonNull(mapper, "mapper must not be null");
         return of(mapper.apply(value));
     }
 
     public <U> U in(Function<? super T, ? extends U> mapper) {
-        notNull(mapper, "mapper must not be null");
+        requireNonNull(mapper, "mapper must not be null");
         return mapper.apply(value);
     }
 
 //    public Identity<T> filter(Predicate<? super T> predicate) {
-//        notNull(predicate, "predicate must not be null");
+//        requireNonNull(predicate, "predicate must not be null");
 //        return predicate.test(value) ? this : empty();
 //    }
 
