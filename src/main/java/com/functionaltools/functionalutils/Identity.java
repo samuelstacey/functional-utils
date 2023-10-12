@@ -1,5 +1,6 @@
 package com.functionaltools.functionalutils;
 
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -31,16 +32,6 @@ public final class Identity<T> {
         requireNonNull(mapper, "mapper must not be null");
         return mapper.apply(value);
     }
-
-//    public Identity<T> filter(Predicate<? super T> predicate) {
-//        requireNonNull(predicate, "predicate must not be null");
-//        return predicate.test(value) ? this : empty();
-//    }
-
-//    public static<T> Identity<T> empty() {
-//        Identity<T> t = (Identity<T>) EMPTY;
-//        return t;
-//    }
 
     public Stream<T> stream() {
         return Stream.of(value);

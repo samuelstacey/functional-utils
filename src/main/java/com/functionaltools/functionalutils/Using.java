@@ -18,6 +18,7 @@ public final class Using<T> {
         return new Using<>(value);
     }
 
+    //Where possible replace this call and the previous map with an in()
     public T get() {
         return value;
     }
@@ -31,16 +32,6 @@ public final class Using<T> {
         requireNonNull(mapper, "mapper must not be null");
         return mapper.apply(value);
     }
-
-//    public Identity<T> filter(Predicate<? super T> predicate) {
-//        requireNonNull(predicate, "predicate must not be null");
-//        return predicate.test(value) ? this : empty();
-//    }
-
-//    public static<T> Identity<T> empty() {
-//        Identity<T> t = (Identity<T>) EMPTY;
-//        return t;
-//    }
 
     public Stream<T> stream() {
         return Stream.of(value);
