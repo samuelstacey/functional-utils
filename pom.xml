@@ -6,6 +6,19 @@
     <artifactId>functionalutils</artifactId>
     <version>0.0.1</version>
     <name>functionalutils</name>
+    <url>https://github.com/samuelstacey/functional-utils/</url>
+    <licenses>
+        <license>
+            <name>For deploy</name>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>ss</id>
+            <name>Samuel Stacey</name>
+        </developer>
+    </developers>
+    <description>A set of useful classes for functional programming</description>
 
     <packaging>jar</packaging>
 
