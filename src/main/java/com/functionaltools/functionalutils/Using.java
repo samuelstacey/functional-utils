@@ -1,5 +1,6 @@
 package com.functionaltools.functionalutils;
 
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -26,6 +27,19 @@ public final class Using<T> {
     public <U> Using<U> map(Function<? super T, ? extends U> mapper) {
         requireNonNull(mapper, "mapper must not be null");
         return using(mapper.apply(value));
+    }
+
+    public <U> Using<T> peek(Function<? super T, ? extends U> mapper) {
+        requireNonNull(mapper, "mapper must not be null");
+        mapper.apply(value);
+        return using(value);
+    }
+
+    //TODO: rename this before release
+    public Using<T> avert(Function<? super T, Void> mapper) {
+        requireNonNull(mapper, "mapper must not be null");
+        mapper.apply(value);
+        return using(value);
     }
 
     public <U> U in(Function<? super T, ? extends U> mapper) {
