@@ -1,5 +1,6 @@
 package com.functionaltools.functionalutils;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -34,10 +35,9 @@ public final class Using<T> {
         return using(value);
     }
 
-    //TODO: rename this before release
-    public Using<T> avert(Function<? super T, Void> mapper) {
+    public Using<T> peek(Consumer<? super T> mapper) {
         requireNonNull(mapper, "mapper must not be null");
-        mapper.apply(value);
+        mapper.accept(value);
         return using(value);
     }
 
