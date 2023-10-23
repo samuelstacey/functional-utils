@@ -19,4 +19,6 @@ class IdentityTest {
         .isThrownBy(() -> Identity.of(new Object()).map(null))
         .withMessage("mapper must not be null");
     }
+
+    //TODO: write tests
 }

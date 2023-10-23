@@ -32,16 +32,6 @@ public final class Using<T> {
         return mapper.apply(value);
     }
 
-//    public Identity<T> filter(Predicate<? super T> predicate) {
-//        notNull(predicate, "predicate must not be null");
-//        return predicate.test(value) ? this : empty();
-//    }
-
-//    public static<T> Identity<T> empty() {
-//        Identity<T> t = (Identity<T>) EMPTY;
-//        return t;
-//    }
-
     public Stream<T> stream() {
         return Stream.of(value);
     }
